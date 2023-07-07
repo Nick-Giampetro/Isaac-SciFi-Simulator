@@ -1,3 +1,5 @@
 # Isaac-SciFi-Simulator
 
-Made this so you can see the code not just get files. I am sure it will not help you much but figure better you able to see methodology than not.
+A simple attempt to make a Monte-Carlo simulator to model a SciFi concept for my friend Isaac Fox to understand the world of his story better.
+
+Project by Nicholas Giampetro
