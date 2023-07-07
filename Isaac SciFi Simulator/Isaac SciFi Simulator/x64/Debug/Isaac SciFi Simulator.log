@@ -1,0 +1,3 @@
+﻿  Isaac SciFi Simulator.cpp
+C:\Users\njgia\OneDrive\Desktop\Isaac SciFi Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator.cpp(36,5): error C2061: syntax error: identifier 'seed'
+C:\Users\njgia\OneDrive\Desktop\Isaac SciFi Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator.cpp(37,11): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
