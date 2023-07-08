@@ -12,8 +12,8 @@ double rand_normal(double mean, double stddev);
 
 int main()
 {
-    int Gen = 0;
-    double seed, lifeSpan, newLifeSpan, deathAge, birthAge, newBirthAge, converge, tolerance;
+    int Gen, simCount = 10;
+    double seed, lifeSpan, newLifeSpan, deathAge, deathAgePercent, birthAge, oldBirthAge, birthAgePercent, converge, tolerance;
 
     do {
         cout << "Enter Average Life Span" << endl;
@@ -35,30 +35,37 @@ int main()
         cin >> tolerance;
     } while (tolerance <= 0 );
 
+    birthAgePercent = (birthAge / lifeSpan) * 100 ;
+    deathAgePercent = (deathAge / lifeSpan) * 100 ;
+    
     seed = time(NULL);
     srand(seed);
 
-    cout << "Seed Value" << seed << endl;
-    cout << "Generation \t BirthAge \t DeathAge \t LifeSpan" << endl; 
+    cout << endl << "Seed Value" << seed << endl;
     
-    do {
-        Gen++ ;
-        birthAge = rand_normal(birthAge, 5) ;
-        lifeSpan = rand_normal(lifeSpan, 5) ;
-        deathAge = rand_normal(deathAge, 2.5) ;
+    for (int i = 1; i <= simCount; i++) {
+        Gen = 0;
+        oldBirthAge = 0;
+        newLifeSpan = rand_normal(lifeSpan, 5);
 
-        cout << Gen << "\t\t" << birthAge << "\t\t" << deathAge << "\t\t" << lifeSpan << endl;
+        cout << "Simulation Number " << i << endl;
+        cout << "Generation\tBirthAge\tDeathAge\tLifeSpan" << endl;
+        do {
+            Gen++;
+            birthAge = ((rand_normal(birthAgePercent, 2) / 100) * newLifeSpan) + oldBirthAge;
+            deathAge = ((rand_normal(deathAgePercent, 2) / 100) * newLifeSpan) + oldBirthAge;
 
-        newLifeSpan = deathAge - birthAge ;
+            cout << Gen << "\t\t" << birthAge << "\t\t" << deathAge << "\t\t" << newLifeSpan << endl;
 
+            newLifeSpan = deathAge - birthAge;
+            converge = birthAge - oldBirthAge;
+            oldBirthAge = birthAge;
 
-        converge = lifeSpan - newLifeSpan ;
-        // birthAge = newBirthAge ;
-    } while (converge > tolerance) ;
-            
-   
+        } while (converge > tolerance);
+    }
 
-
+    cout << endl;
+    system("pause");
 }
 
 double rand_normal(double mean, double stddev)

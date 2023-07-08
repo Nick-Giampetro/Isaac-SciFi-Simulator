@@ -1,5 +1,4 @@
 ﻿  Isaac SciFi Simulator.cpp
-C:\Users\njgia\OneDrive\Documents\GitHub\Isaac-SciFi-Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator.cpp(38,16): warning C4244: '=': conversion from 'time_t' to 'double', possible loss of data
-C:\Users\njgia\OneDrive\Documents\GitHub\Isaac-SciFi-Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator.cpp(39,11): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\njgia\OneDrive\Documents\GitHub\Isaac-SciFi-Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator.cpp(16,61): warning C4101: 'newBirthAge': unreferenced local variable
+C:\Users\njgia\OneDrive\Documents\GitHub\Isaac-SciFi-Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator.cpp(41,16): warning C4244: '=': conversion from 'time_t' to 'double', possible loss of data
+C:\Users\njgia\OneDrive\Documents\GitHub\Isaac-SciFi-Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator\Isaac SciFi Simulator.cpp(42,11): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
   Isaac SciFi Simulator.vcxproj -> C:\Users\njgia\OneDrive\Documents\GitHub\Isaac-SciFi-Simulator\Isaac SciFi Simulator\x64\Debug\Isaac SciFi Simulator.exe
