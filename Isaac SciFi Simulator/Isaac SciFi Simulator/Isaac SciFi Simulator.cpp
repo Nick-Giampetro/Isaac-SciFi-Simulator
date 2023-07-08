@@ -12,7 +12,8 @@ double rand_normal(double mean, double stddev);
 
 int main()
 {
-    double seed, lifeSpan, deathAge, birthAge, converge, tolerance;
+    int Gen = 0;
+    double seed, lifeSpan, newLifeSpan, deathAge, birthAge, newBirthAge, converge, tolerance;
 
     do {
         cout << "Enter Average Life Span" << endl;
@@ -22,26 +23,40 @@ int main()
     do {
         cout << "Enter Average Age of Child Birth" << endl;
         cin >> birthAge;
-    } while (birthAge < lifeSpan);
+    } while (birthAge > lifeSpan);
 
     do {
         cout << "Enter Average Age of Child Death" << endl;
         cin >> deathAge;
-    } while (deathAge > birthAge);
+    } while (deathAge < birthAge);
 
     do {
         cout << "Enter Convergence Tolerance" << endl;
         cin >> tolerance;
     } while (tolerance <= 0 );
-     
-    do {
-       
 
-        converge = last
-    } while (converge > tolerance)
-            
     seed = time(NULL);
     srand(seed);
+
+    cout << "Seed Value" << seed << endl;
+    cout << "Generation \t BirthAge \t DeathAge \t LifeSpan" << endl; 
+    
+    do {
+        Gen++ ;
+        birthAge = rand_normal(birthAge, 5) ;
+        lifeSpan = rand_normal(lifeSpan, 5) ;
+        deathAge = rand_normal(deathAge, 2.5) ;
+
+        cout << Gen << "\t\t" << birthAge << "\t\t" << deathAge << "\t\t" << lifeSpan << endl;
+
+        newLifeSpan = deathAge - birthAge ;
+
+
+        converge = lifeSpan - newLifeSpan ;
+        // birthAge = newBirthAge ;
+    } while (converge > tolerance) ;
+            
+   
 
 
 }
