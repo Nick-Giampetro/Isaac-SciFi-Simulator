@@ -31,9 +31,9 @@ int main()
     } while (deathAge < birthAge);
 
     do {
-        cout << "Enter Convergence Tolerance" << endl;
-        cin >> tolerance;
-    } while (tolerance <= 0 );
+        cout << "Enter Integer for Number of Cases You Would Like to Run" << endl;
+        cin >> simCount;
+    } while (simCount < 0);
 
     birthAgePercent = (birthAge / lifeSpan) * 100 ;
     deathAgePercent = (deathAge / lifeSpan) * 100 ;
@@ -41,7 +41,7 @@ int main()
     seed = time(NULL);
     srand(seed);
 
-    cout << endl << "Seed Value" << seed << endl;
+    cout << endl << "Seed Value : " << seed << endl;
     
     for (int i = 1; i <= simCount; i++) {
         Gen = 0;
@@ -61,7 +61,8 @@ int main()
             converge = birthAge - oldBirthAge;
             oldBirthAge = birthAge;
 
-        } while (converge > tolerance);
+        } while (converge > 0);
+        cout << endl;
     }
 
     cout << endl;
