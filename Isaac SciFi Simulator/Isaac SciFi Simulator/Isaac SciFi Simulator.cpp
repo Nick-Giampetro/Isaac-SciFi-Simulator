@@ -4,6 +4,7 @@
 #include <iostream>
 #include <random>
 #include <cmath>
+#include <iomanip>
 
 
 using namespace std;
@@ -13,7 +14,7 @@ double rand_normal(double mean, double stddev);
 int main()
 {
     int Gen, simCount = 10;
-    double seed, lifeSpan, newLifeSpan, deathAge, deathAgePercent, birthAge, oldBirthAge, birthAgePercent, converge, tolerance;
+    double seed, lifeSpan, newLifeSpan, deathAge, deathAgePercent, birthAge, oldBirthAge, birthAgePercent, converge, lifeSpanRatio;
 
     do {
         cout << "Enter Average Life Span" << endl;
@@ -49,23 +50,35 @@ int main()
         newLifeSpan = rand_normal(lifeSpan, 5);
 
         cout << "Simulation Number " << i << endl;
-        cout << "Generation\tBirthAge\tDeathAge\tLifeSpan" << endl;
+        cout << "Generation\tBirth Age\tDeath Age\tLife Span\tLife Span Ratio" << endl;
         do {
             Gen++;
             birthAge = ((rand_normal(birthAgePercent, 2) / 100) * newLifeSpan) + oldBirthAge;
             deathAge = ((rand_normal(deathAgePercent, 2) / 100) * newLifeSpan) + oldBirthAge;
 
-            cout << Gen << "\t\t" << birthAge << "\t\t" << deathAge << "\t\t" << newLifeSpan << endl;
+            lifeSpanRatio = newLifeSpan / (deathAge - birthAge);
 
-            newLifeSpan = deathAge - birthAge;
+            cout << setprecision(3) << fixed << Gen << "\t\t" << birthAge << "\t\t" << deathAge << "\t\t" << newLifeSpan << "\t\t" << lifeSpanRatio << endl;
+
             converge = birthAge - oldBirthAge;
+
+            lifeSpanRatio = newLifeSpan / (deathAge - birthAge);
+            newLifeSpan = deathAge - birthAge;
+            
             oldBirthAge = birthAge;
 
         } while (converge > 0);
         cout << endl;
     }
 
-    cout << endl;
+    cout << "All times are recorded here in units of Generation 1's years." << endl
+        << "Birth Age is the time the individual of that generation had a kid." << endl
+        << "Death Age is the time the individual of that generation would experience their kids death." << endl
+        << "Life Span is simply how long the member of that generation lived." << endl
+        << "Life Span Ratio is a multiplier of how much longer a generation lives compared to its kid's generation" << endl
+        << endl;
+
+
     system("pause");
 }
 
