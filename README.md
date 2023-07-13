@@ -2,4 +2,4 @@
 
 Project by Nicholas Giampetro. 
  
-A simple attempt to make a simple simulator with semi-random values to model a SciFi concept for my friend Isaac Fox so he can better understand the world of his story. 
+A person project to make a basic simulator with semi-random values to develop a simple model for a SciFi concept that my friend Isaac Fox is working on so he can better understand the world of his story. 
