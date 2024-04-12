@@ -5,6 +5,7 @@
 #include <random>
 #include <cmath>
 #include <iomanip>
+#include <fstream>
 
 
 using namespace std;
@@ -75,12 +76,16 @@ int main()
         << "Birth Age is the time the individual of that generation had a kid." << endl
         << "Death Age is the time the individual of that generation would experience their kids death." << endl
         << "Life Span is simply how long the member of that generation lived." << endl
-        << "Life Span Ratio is a multiplier of how much longer a generation lives compared to its kid's generation" << endl
+        << "Life Span Ratio is a multiplier of how much longer a generation lives compared to its kid's generation." << endl
         << endl;
 
 
     system("pause");
 }
+
+
+
+
 
 double rand_normal(double mean, double stddev)
 {//Box muller method
